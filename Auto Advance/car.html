@@ -2,29 +2,110 @@
 <html>
 <head>
   <title>Auto Advance</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image:linear-gradient(rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.75)), url('lam.jpg'); 
+      background-size: cover;
+      background-position: center;
+    }
+    
+    header {
+      background-color: rgba(0, 0, 0, 0.5); 
+      color: #2dd3c3;
+      padding: 20px;
+      text-align: center;
+      font-size: larger;
+    }
+    
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+    
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    nav ul li a:hover {
+      background-color: rgba(3, 243, 191, 0.234);
+      color: #ffffff;
+    }
+    
+    .active {
+      background-color: #1d201f;
+      color: #108a6d;
+    }
+
+    main {
+      padding: 100px 100px; 
+    }
+
+    main h2{
+      color: #007763;
+      font-size: 40px;
+    }
+
+    main p{
+      color: #fff;
+      font-size: 20px;
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.5); 
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    }
+
+    .login {
+      text-align: right;
+      margin-top: 20px;
+      margin-right: 20px;
+    }
+    
+    .login-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    
+    .login-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>Auto Advance</h1>
     <nav>
       <ul>
-        <li><a href="car.html">Home</a></li>
+        <li><a class="active" href="car.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="Vehicles.html">Vehicles</a></li>
+        <li><a href="Vehicle.html">Vehicles</a></li>
         <li><a href="parts.html">Auto Parts</a></li>
-        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-    <div class="login-box">
-        <form action="/login" method="post">
-          <input type="text" name="username" placeholder="Username">
-          <input type="password" name="password" placeholder="Password">
-          <button type="submit">Login</button>
-        </form>
-      </div>
   </header>
   <main>
+    <div class="login">
+      <p>Already have an account?</p>
+      <a href="login.html" class="login-btn">Login</a>
+    </div>
     <section>
       <h2>Welcome to Auto Advance</h2>
       <p>We offer a wide range of quality vehicles to suit your needs.</p>
