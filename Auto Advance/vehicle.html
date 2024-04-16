@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Auto Advance - Vehicles</title>
   <style>
-    /* Styles for vehicle page */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -70,23 +69,27 @@
       margin-left: 10px;
     }
 
-    .vehicle-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+    .vehicle-table {
+      width: 100%; 
+      text-align: center;
     }
+
+    .vehicle-table td {
+      width: 50%; 
+      vertical-align: top; 
+    } 
 
     .vehicle {
       margin: 20px;
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 5px;
-      width: 200px;
     }
 
     .vehicle img {
       width: 100%;
       border-radius: 5px;
+      cursor: pointer; 
     }
 
     .vehicle h3 {
@@ -97,60 +100,15 @@
     .vehicle p {
       margin-top: 5px;
       color: #777;
+      display: none; 
+      background-color: white; 
+      padding: 10px; 
     }
 
-    .slideshow-container {
-      max-width: 1000px;
-      position: relative;
-      margin: auto;
+    .vehicle p.active {
+      display: block; 
     }
 
-    .mySlides {
-      display: none;
-    }
-
-    .prev, .next {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      width: auto;
-      margin-top: -22px;
-      padding: 16px;
-      color: white;
-      font-weight: bold;
-      font-size: 18px;
-      transition: 0.6s ease;
-      border-radius: 0 3px 3px 0;
-      user-select: none;
-    }
-
-    .next {
-      right: 0;
-      border-radius: 3px 0 0 3px;
-    }
-
-    .prev:hover, .next:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    .text {
-      color: #f2f2f2;
-      font-size: 15px;
-      padding: 8px 12px;
-      position: absolute;
-      bottom: 8px;
-      width: 100%;
-      text-align: center;
-    }
-
-    footer {
-      background-color: rgba(0, 0, 0, 0.5); 
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    bottom: 0;
-    width: 100%;
-    }
   </style>
 </head>
 <body>
@@ -162,16 +120,16 @@
         <li><a href="about.html">About</a></li>
         <li><a class="active" href="vehicles.html">Vehicles</a></li>
         <li><a href="parts.html">Auto Parts</a></li>
-        <li><a href="login.html">login</a></li>
+        <li><a href="login.html">Login</a></li>
       </ul>
     </nav>
   </header>
   <main>
     <section class="new-arrivals">
+      <h2>New Arrivals</h2>
       <div class="slideshow-container">
         <div class="mySlides">
             <iframe width="100%" height="500" src="https://www.youtube.com/embed/fmQef3Cp-kk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            
         </div>
         <div class="mySlides">
             <iframe width="100%" height="500" src="https://www.youtube.com/embed/atZdt-_MFzw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -195,30 +153,53 @@
           <option value="kia">Kia</option>
         </select>
       </div>
-      <div class="vehicle-list">
-        <div class="vehicle" data-brand="toyota">
-          <img src="toyota.jpg" alt="Toyota">
-          <h3>Toyota Corolla</h3>
-          <p>Compact sedan</p>
-        </div>
-        <div class="vehicle" data-brand="nissan">
-          <img src="nissan.jpg" alt="Nissan">
-          <h3>Nissan Altima</h3>
-          <p>Sedan</p>
-        </div>
-        <div class="vehicle" data-brand="mitsubishi">
-          <img src="mitsubishi.jpg" alt="Mitsubishi">
-          <h3>Mitsubishi Outlander</h3>
-          <p>SUV</p>
-        </div>
-        <div class="vehicle" data-brand="kia">
-          <img src="kia.jpg" alt="Kia">
-          <h3>Kia Sportage</h3>
-          <p>SUV</p>
-        </div>
-        <!-- Add more vehicle listings here -->
-      </div>
+      <table class="vehicle-table">
+        <tr>
+          <td>
+            <div class="vehicle" data-brand="toyota">
+              <img src="T-LC.jpg" alt="Toyota" onclick="toggleDescription(this)">
+              <h3>Toyota Land Cruiser</h3>
+              <p class="description">LAND CRUISER (200 SERIES)<br>TRIED AND TESTED IN THE AUSTRALIAN OUTBACK (CONSIDERED TO BE ONE OF THE TOUGHEST OPERATING ENVIRONMENTS IN BOTH TEMPERATURE AND TERRAIN), THE LAND CRUISER (200 SERIES) GOES WHERE NO MAN (OR VEHICLE) HAS EVER BEEN.</p>
+            </div>
+          </td>
+          <td>
+            <div class="vehicle" data-brand="toyota">
+              <img src="T-R.jpg" alt="Toyota" onclick="toggleDescription(this)">
+              <h3>RAV4</h3>
+              <p class="description">The 21st century SUV just can’t get any smoother than the RAV4. Powered with stamina that can take charge of your adventures both on and off the road, this automobile capacitates much more than you could ever imagine. So buckle up, pack up and get going to feel the absolute stamina of the RAV4 is raving with the hype in the SUV segment. So buckle up, pack up and get going to feel the absolute stamina of the RAV4 is raving with the hype in the SUV segment.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="vehicle" data-brand="nissan">
+              <img src="nissan.jpg" alt="Nissan" onclick="toggleDescription(this)">
+              <h3>Nissan Altima</h3>
+              <p class="description">Sedan</p>
+            </div>
+          </td>
+          <td>
+            <div class="vehicle" data-brand="mitsubishi">
+              <img src="mitsubishi.jpg" alt="Mitsubishi" onclick="toggleDescription(this)">
+              <h3>Mitsubishi Outlander</h3>
+              <p class="description">SUV</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="vehicle" data-brand="kia">
+              <img src="kia.jpg" alt="Kia" onclick="toggleDescription(this)">
+              <h3>Kia Sportage</h3>
+              <p class="description">SUV</p>
+            </div>
+          </td>
+          <td></td> <!-- Empty cell for alignment -->
+        </tr>
+        <!-- Add more rows and vehicles as needed -->
+      </table>
     </section>
+    
   </main>
   <footer>
     <p>&copy; 2024 Auto Advance. All rights reserved.</p>
@@ -227,7 +208,7 @@
     document.getElementById('brand-filter').addEventListener('change', function() {
       const selectedBrand = this.value;
       const vehicles = document.querySelectorAll('.vehicle');
-
+  
       vehicles.forEach(vehicle => {
         const brand = vehicle.getAttribute('data-brand');
         if (selectedBrand === 'all' || selectedBrand === brand) {
@@ -237,17 +218,18 @@
         }
       });
     });
+  
     let slideIndex = 1;
     showSlides(slideIndex);
-
+  
     function plusSlides(n) {
       showSlides(slideIndex += n);
     }
-
+  
     function currentSlide(n) {
       showSlides(slideIndex = n);
     }
-
+  
     function showSlides(n) {
       let i;
       const slides = document.getElementsByClassName("mySlides");
@@ -258,6 +240,13 @@
       }
       slides[slideIndex-1].style.display = "block";
     }
+  
+    function toggleDescription(image) {
+      const parentDiv = image.parentElement; 
+      const description = parentDiv.querySelector('p'); 
+      description.classList.toggle('active'); 
+    }
   </script>
+  
 </body>
 </html>
